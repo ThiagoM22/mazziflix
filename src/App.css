@@ -1,6 +1,6 @@
 body {
   font-family: "Inter", sans-serif !important;
-  background-color: rgb(12, 12, 12) !important;
+  background-color: rgb(0, 0, 0) !important;
   color: white !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -45,6 +45,10 @@ body {
     font-size: 40px !important;
     width: 10% !important;
   }
+  .pesquisa {
+    width: 250px !important;
+  }
+  
 }
 .Card {
   width: 300px !important;
@@ -124,4 +128,35 @@ body {
   scroll-behavior: smooth;
   height: 500px;
 }
-
+.Footer {
+  background: rgba(0, 0, 0, 1) !important;
+  color: rgb(255, 255, 255) !important;
+}
+.Modal {
+  background-color: #202127 !important;
+  max-width: 996px;
+}
+.modalBackdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}
+.movieModal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 850px;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background: #000;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  color: #fff;
+  max-height: 100vh;
+  animation: fadeIn 0.3s ease-in-out forwards;
+}

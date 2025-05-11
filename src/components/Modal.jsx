@@ -1,10 +1,23 @@
 import React from "react";
 
-const Modal = () => {
+const Modal = (props) => {
+  const handleBackdropClick = (e) => {
+    // Fecha o modal apenas se o clique for no backdrop
+    if (e.target === e.currentTarget) {
+      props.toggleModal();
+    }
+  };
+
   return (
     <>
-      <div className="Centro">
-        <div className="Modal container-fluid d-flex justify-content-center flex-column align-items-center bg-black">
+       <div
+        className="Centro modalBackdrop"
+        onClick={handleBackdropClick} // Adiciona o evento de clique no backdrop
+      >
+        <div
+          className="Modal container-fluid d-flex justify-content-center flex-column align-items-center bg-black movieModal"
+          onClick={(e) => e.stopPropagation()} // Impede o clique de fechar o modal
+        >
           <div className="d-flex flex-column banner position-relative">
             {/* Gradiente */}
             <div className="gradient-overlay position-absolute"></div>
