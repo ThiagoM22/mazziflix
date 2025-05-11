@@ -1,0 +1,127 @@
+body {
+  font-family: "Inter", sans-serif !important;
+  background-color: rgb(12, 12, 12) !important;
+  color: white !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.NavBar {
+  background: linear-gradient(#080808, #00000010) !important;
+  color: rgb(255, 255, 255) !important;
+}
+.pesquisa {
+  width: 400px !important;
+  height: 40px;
+}
+.Destaque {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 1)
+    ),
+    url("https://placehold.co/1920x600") !important;
+  background-size: "cover";
+  background-position: "center";
+  min-height: 600px;
+}
+.Assistir {
+  width: 200px !important;
+  height: 50px;
+  background-color: #db0000 !important;
+  margin-left: ;
+}
+.Info {
+  margin-left: 200px !important;
+}
+.Info h1 {
+  font-size: 60px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .Info {
+    margin-left: 2px !important;
+  }
+  .Info h1 {
+    font-size: 40px !important;
+    width: 10% !important;
+  }
+}
+.Card {
+  width: 300px !important;
+  height: 420px !important;
+  transition: transform 0.3s ease-in-out;
+}
+.Card:hover {
+  transform: scale(1.1);
+}
+
+.banner {
+  position: relative;
+}
+
+.Image {
+  width: 900px;
+  height: auto;
+}
+.banner {
+  position: relative;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(12, 12, 12, 0.5),
+    rgba(0, 0, 0, 0.9)
+  );
+  z-index: 2; /* Coloque o gradiente acima da imagem */
+  pointer-events: none; /* Permite interações com elementos abaixo */
+}
+
+.logo {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+}
+
+.logo {
+  position: absolute;
+  bottom: 30px; /* Ajuste a distância da parte inferior */
+  left: 5%;
+  transform: translateX(-50%);
+  width: 50px; /* Ajuste o tamanho da logo */
+  height: 50px;
+}
+.InfoModal {
+  position: absolute;
+  bottom: 150px; /* Ajuste a distância da parte inferior */
+  left: 5%;
+  width: 400px !important;
+}
+.Modal {
+  width: 900px !important;
+}
+.Modal p {
+  font-size: 16px !important;
+}
+.Centro {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.scroller {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
+  height: 500px;
+}
+
