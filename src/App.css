@@ -28,7 +28,7 @@ body {
   width: 200px !important;
   height: 50px;
   background-color: #db0000 !important;
-  margin-left: ;
+  margin-left: 0;
 }
 .Info {
   margin-left: 200px !important;
@@ -48,7 +48,6 @@ body {
   .pesquisa {
     width: 250px !important;
   }
-  
 }
 .Card {
   width: 300px !important;
@@ -88,17 +87,8 @@ body {
 
 .logo {
   position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;
-  height: 50px;
-}
-
-.logo {
-  position: absolute;
-  bottom: 30px; /* Ajuste a distância da parte inferior */
-  left: 5%;
+  bottom: 10px; /* Ajuste a distância da parte inferior */
+  left: 6%;
   transform: translateX(-50%);
   width: 50px; /* Ajuste o tamanho da logo */
   height: 50px;
@@ -144,7 +134,6 @@ body {
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
   z-index: 999;
-  animation: fadeIn 0.3s ease-in-out forwards;
 }
 .movieModal {
   position: fixed;
@@ -158,5 +147,57 @@ body {
   z-index: 1000;
   color: #fff;
   max-height: 100vh;
+}
+.animate-modal {
   animation: fadeIn 0.3s ease-in-out forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.InputLog input {
+  height: 50px !important;
+}
+.btnCor {
+  background-color: #db0000 !important;
+  height: 50px;
+}
+input::placeholder,
+textarea::placeholder {
+  color: #ffffff4d !important; /* Define a cor do placeholder */
+  opacity: 1; /* Garante que o placeholder seja visível */
+  font-weight: 600;
+}
+.LoginPage {
+  background: url("./assets/BackNet.jpg") no-repeat center center fixed;
+
+  height: 100vh;
+}
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.555);
+  z-index: 999;
+}
+.LoginBackground {
+  background: rgba(0, 0, 0, 0.863);
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
+}
+.avatar {
+  max-width: 70px;
+  max-height: 70px;
+}
+.logo1 {
+  max-width: 200px;
+  max-height: 80px;
 }
