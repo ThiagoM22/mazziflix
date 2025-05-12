@@ -6,36 +6,55 @@ import CardFilm from "../components/CardFilm";
 
 const Resultado = () => {
   const location = useLocation(); // Hook para acessar a URL atual
-  const [pesquisa, setPesquisa] = useState("");
+  const [searchResults, setSearchResults] = useState([]); // Estado para armazenar os resultados da pesquisa
+  const API_KEY = "ed5a7ff96207a459fa84ad73ea0aab5b"; // Substitua pela sua chave da API do TMDB
+  const BASE_URL = "https://api.themoviedb.org/3";
 
   useEffect(() => {
     // Extrai o parâmetro "query" da URL
     const params = new URLSearchParams(location.search);
     const query = params.get("query");
+
     if (query) {
-      setPesquisa(query); // Atualiza o estado com o valor da query
+      // Função para buscar filmes com base no termo de pesquisa
+      const fetchSearchResults = async () => {
+        try {
+          const response = await fetch(
+            `${BASE_URL}/search/movie?api_key=${API_KEY}&language=pt-BR&query=${query}&page=1`
+          );
+          const data = await response.json();
+          setSearchResults(data.results); // Atualiza o estado com os resultados da pesquisa
+        } catch (error) {
+          console.error("Erro ao buscar filmes:", error);
+        }
+      };
+
+      fetchSearchResults();
     }
   }, [location.search]); // Reexecuta sempre que a URL mudar
-
-  useEffect(() => {
-    // Atualiza o título da página quando o valor da pesquisa muda
-    document.title = `Resultados para: ${pesquisa}`;
-  }, [pesquisa]);
 
   return (
     <>
       <NavBar home={""} filmes={""} series={""} />
       <div className="container mt-5">
-        <h1>Resultados para: {pesquisa}</h1>
+        <h1>Resultados da Pesquisa</h1>
         <div className="d-flex gap-4 flex-wrap mt-4">
-          <CardFilm />
-          <CardFilm />
-          <CardFilm />
-          <CardFilm />
-          <CardFilm />
-          <CardFilm />
-          <CardFilm />
-          <CardFilm />
+          {searchResults.length > 0 ? (
+            searchResults.map((movie) => (
+              <CardFilm
+                key={movie.id}
+                title={movie.title}
+                poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                overview={movie.overview}
+                backgroundImage={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+                releaseDate={movie.release_date}
+                genres={movie.genre_ids}
+                cast={movie.cast}
+              />
+            ))
+          ) : (
+            <p>Nenhum resultado encontrado.</p>
+          )}
         </div>
       </div>
       <Footer />

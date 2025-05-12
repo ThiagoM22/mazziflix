@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import avatar from "../assets/Avatar.jpg"
-import logo from "../assets/Netflix.png"
+import avatar from "../assets/Avatar.jpg";
+import logo from "../assets/Netflix.png";
 
 const NavBar = ({ home, series, filmes }) => {
   const navigate = useNavigate(); // Hook para navegação

@@ -14,12 +14,6 @@ body {
   height: 40px;
 }
 .Destaque {
-  background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3),
-      rgba(0, 0, 0, 1)
-    ),
-    url("https://placehold.co/1920x600") !important;
   background-size: "cover";
   background-position: "center";
   min-height: 600px;
@@ -116,7 +110,7 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   scroll-behavior: smooth;
-  height: 500px;
+  height: 470px;
 }
 .Footer {
   background: rgba(0, 0, 0, 1) !important;
