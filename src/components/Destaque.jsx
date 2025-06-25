@@ -1,4 +1,11 @@
 const Destaque = (props) => {
+  const handleWatchClick = () => {
+    // Abre uma nova guia pesquisando o título do filme no Google
+    const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(
+      props.title
+    )}`;
+    window.open(searchUrl, "_blank");
+  };
   return (
     <>
       <div
@@ -12,7 +19,10 @@ const Destaque = (props) => {
         <div className="d-flex flex-column justify-content-center Info text-md-start">
           <h1 className="display-4 fw-bold">{props.title}</h1>
           <p className="w-75 w-md-50">{props.description}</p>
-          <button className="Assistir btn btn-success fs-5 border-0 fw-bold mt-3">
+          <button
+            className="Assistir btn btn-success fs-5 border-0 fw-bold mt-3"
+            onClick={handleWatchClick}
+          >
             Assistir
           </button>
         </div>

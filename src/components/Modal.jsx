@@ -8,6 +8,14 @@ const Modal = (props) => {
     }
   };
 
+  const handleWatchClick = () => {
+    // Abre uma nova guia pesquisando o título do filme no Google
+    const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(
+      props.title
+    )}`;
+    window.open(searchUrl, "_blank");
+  };
+
   return (
     <>
       <div
@@ -30,7 +38,10 @@ const Modal = (props) => {
               <div className="InfoModal">
                 <div className="text position-absolute z-2">
                   <h1 className="display-6 fw-bold">{props.title}</h1>
-                  <button className="Assistir btn btn-success fs-5 border-0 fw-bold mt-3">
+                  <button
+                    className="Assistir btn btn-success fs-5 border-0 fw-bold mt-3"
+                    onClick={handleWatchClick} // Adiciona o evento de clique
+                  >
                     Assistir
                   </button>
                 </div>
