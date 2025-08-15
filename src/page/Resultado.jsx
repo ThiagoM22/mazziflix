@@ -43,6 +43,7 @@ const Resultado = () => {
             searchResults.map((movie) => (
               <CardFilm
                 key={movie.id}
+               id={movie.id} // Passa o ID do filme
                 title={movie.title}
                 poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                 overview={movie.overview}
@@ -50,6 +51,8 @@ const Resultado = () => {
                 releaseDate={movie.release_date}
                 genres={movie.genre_ids}
                 cast={movie.cast}
+                voteAverage={movie.vote_average}
+
               />
             ))
           ) : (

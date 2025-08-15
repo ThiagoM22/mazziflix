@@ -89,9 +89,9 @@ body {
 }
 .InfoModal {
   position: absolute;
-  bottom: 150px; /* Ajuste a distância da parte inferior */
+  bottom: 30%; /* Ajuste a distância da parte inferior */
   left: 5%;
-  width: 400px !important;
+  width: 800px !important;
 }
 .Modal {
   width: 900px !important;
