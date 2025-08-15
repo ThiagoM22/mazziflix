@@ -100,7 +100,7 @@ body {
 .InfoModal {
   position: absolute;
   bottom: 27%; /* Ajuste a distância da parte inferior */
-  left: 5%;
+  left: 4%;
   width: 800px !important;
 }
 
@@ -123,6 +123,7 @@ body {
   background: rgba(0, 0, 0, 1) !important;
   color: rgb(255, 255, 255) !important;
 }
+
 .Modal {
   background-color: #202127 !important;
   max-width: 996px;
@@ -133,7 +134,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   z-index: 999;
 }
 .movieModal {
@@ -147,7 +148,6 @@ body {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
   z-index: 1000;
   color: #fff;
-  max-height: 100vh;
 }
 .animate-modal {
   animation: fadeIn 0.3s ease-in-out forwards;

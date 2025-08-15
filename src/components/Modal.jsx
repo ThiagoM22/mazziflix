@@ -19,7 +19,7 @@ const Modal = (props) => {
   return (
     <>
       <div
-        className="w-100 h-100 d-flex justify-content-center align-items-center modalBackdrop"
+        className="w-100 h-100 d-flex justify-content-center align-items-center modalBackdrop overflow-y-auto"
         onClick={handleBackdropClick} // Adiciona o evento de clique no backdrop
       >
         <div className="animate-modal col-12 col-md-6">
@@ -27,6 +27,14 @@ const Modal = (props) => {
             className="col-12  container-fluid d-flex justify-content-center flex-column align-items-center bg-black movieModal"
             onClick={(e) => e.stopPropagation()} // Impede o clique de fechar o modal
           >
+            {/* Botão de fechar */}
+            <button
+              className="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+              onClick={props.toggleModal}
+              style={{ zIndex: 10 }}
+              aria-label="Fechar modal"
+            ></button>
+
             <div className="d-flex flex-column banner position-relative">
               {/* Gradiente */}
               <div className="gradient-overlay position-absolute w-100 h-100"></div>
@@ -99,7 +107,7 @@ const Modal = (props) => {
                   </div>
                 </div>
 
-                <div className="col-12  d-md-none">
+                <div className="col-12  d-md-none mb-2 mb-md-0">
                   <button className="btnDestaque Assistir w-100 btn btn-success fs-6 fs-md-5 border-0 fw-bold mt-2 px-3 py-2">
                     ▶ Assistir
                   </button>
