@@ -28,11 +28,10 @@ const Login = () => {
     localStorage.setItem("userName", name); // Armazena o nome no localStorage
     home("/Home"); // Redireciona para a página inicial
   };
-
   return (
     <>
       <div className="backdrop Centro">
-        <div className="container w-25 d-flex flex-column p-5 LoginBackground">
+        <div className="container col-10 col-md-3  d-flex flex-column p-5 LoginBackground">
           <h2 className="fw-bold fs-1">Login</h2>
           <div className="d-flex flex-column align-items-center mt-4">
             <div className="mb-3 gap-3 w-100 InputLog justify-content-center">
