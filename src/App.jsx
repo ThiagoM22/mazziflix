@@ -30,7 +30,7 @@ function App() {
     const fetchRomanceMovies = async () => {
       try {
         const response = await fetch(
-          `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=pt-BR&with_genres=10749&page=1`
+          `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=pt-BR&with_genres=28&page=1`
         );
         const data = await response.json();
         setRomanceMovies(data.results);
@@ -40,7 +40,7 @@ function App() {
     };
 
     // Função para buscar filmes de drama
-    const fetchDramaMovies = async () => {
+    const fetchDramaMovies = async (props) => {
       try {
         const response = await fetch(
           `${BASE_URL}/discover/movie?api_key=${API_KEY}&language=pt-BR&with_genres=18&page=1`
@@ -70,7 +70,7 @@ function App() {
         />
       )}
       <Carrossel genero="Destaques" movies={movies} />
-      <Carrossel genero="Romance" movies={romanceMovies} />
+      <Carrossel genero="Ação" movies={romanceMovies} />
       <Carrossel genero="Drama" movies={dramaMovies} />
       <Footer />
     </>

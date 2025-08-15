@@ -10,7 +10,9 @@ const Carrossel = ({ genero, movies }) => {
             <CardFilm
               key={movie.id}
               id={movie.id} // Passa o ID do filme
+              name={movie.name}
               title={movie.title}
+              first_air_date={movie.first_air_date}
               poster={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               overview={movie.overview}
               backgroundImage={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}

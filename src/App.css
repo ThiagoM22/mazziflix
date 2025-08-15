@@ -60,6 +60,15 @@ body {
   width: 900px;
   height: auto;
 }
+
+/* Em desktop (lg e acima), usar tamanho original */
+@media screen and (min-width: 992px) {
+  .Image {
+    width: 900px !important;
+    height: auto !important;
+    max-height: none !important;
+  }
+}
 .banner {
   position: relative;
 }

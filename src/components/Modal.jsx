@@ -27,50 +27,82 @@ const Modal = (props) => {
             className="Modal container-fluid d-flex justify-content-center flex-column align-items-center bg-black movieModal"
             onClick={(e) => e.stopPropagation()} // Impede o clique de fechar o modal
           >
-            <div className="d-flex flex-column banner position-relative ">
+            <div className="d-flex flex-column banner position-relative">
               {/* Gradiente */}
-              <div className="gradient-overlay position-absolute"></div>
+              <div className="gradient-overlay position-absolute w-100 h-100"></div>
               <img
                 className="Image z-1 border-start-3 border-end-3"
                 src={props.backgroundImage}
                 alt={props.title}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  maxHeight: "250px",
+                  objectFit: "cover",
+                }}
               />
               <div className="InfoModal">
-                <div className="text position-absolute z-2">
-                  <h1 className="display-6 fw-bold w-100">{props.title}</h1>
+                <div className="text position-absolute z-2 p-2 p-md-3">
+                  <h1 className="display-6 display-md-5 fw-bold w-100 text-white mb-2">
+                    {props.title}
+                  </h1>
                   <button
-                    className="Assistir btn btn-success fs-5 border-0 fw-bold mt-1"
-                    onClick={handleWatchClick} // Adiciona o evento de clique
+                    className="Assistir btn btn-success fs-6 fs-md-5 border-0 fw-bold mt-1 px-3 py-2"
+                    onClick={handleWatchClick}
                   >
-                    Assistir
+                    ▶ Assistir
                   </button>
                 </div>
               </div>
             </div>
-            <div className="d-flex justify-content-around mt-4 mb-4">
-              <div className="d-flex flex-column ms-4 ">
-                <div className="Data d-flex gap-3 justify-content-start fw-bold">
-                  <p>{props.releaseDate}</p>
-                  <p>{Math.round(props.voteAverage * 10)}% Match</p>{" "}
-                  {/* Nota do filme */}
-                  <p>{props.runtime} min</p> {/* Tempo do filme */}
+            <div className="container-fluid mt-3 mt-md-4 mb-3 mb-md-4">
+              <div className="row g-3">
+                {/* Coluna principal - Informações do filme/série */}
+                <div className="col-12 col-lg-8">
+                  <div className="ms-2 ms-md-4">
+                    <div className="Data d-flex flex-wrap gap-2 gap-md-3 justify-content-start fw-bold mb-3">
+                      <span className="badge bg-secondary fs-6">
+                        {props.releaseDate}
+                      </span>
+                      <span className="badge bg-success fs-6">
+                        {Math.round(props.voteAverage * 10)}% Match
+                      </span>
+                      <span className="badge bg-info fs-6">
+                        {props.runtime !== "N/A"
+                          ? props.runtime + " min"
+                          : props.episodeCount + " episódios"}
+                      </span>
+                    </div>
+                    <div>
+                      <p className="text-light lh-base fs-6 pe-2">
+                        {props.overview === ""
+                          ? "Sem descrição disponível."
+                          : props.overview}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <p className="col-10">
-                    {props.overview === ""
-                      ? "Sem descrição disponível."
-                      : props.overview}
-                  </p>
-                </div>
-              </div>
-              <div className="d-flex flex-column p-0 me-4 ps-5 col-4">
-                <div>
-                  <p className="mb-1">
-                    <strong>Gêneros:</strong> {props.genres?.join(";  ")}
-                  </p>
-                </div>
-                <div>
-                  <strong>Elenco:</strong> {props.cast?.join(";  ")}
+
+                {/* Coluna secundária - Gêneros e Elenco */}
+                <div className="col-12 col-lg-4">
+                  <div className="me-2 me-md-4 ps-0 ps-lg-5">
+                    <div className="mb-3">
+                      <p className="mb-1 text-light">
+                        <strong className="text-white">Gêneros:</strong>
+                      </p>
+                      <p className="text-secondary fs-6 mb-0">
+                        {props.genres?.join(", ") || "N/A"}
+                      </p>
+                    </div>
+                    <div>
+                      <p className="mb-1 text-light">
+                        <strong className="text-white">Elenco:</strong>
+                      </p>
+                      <p className="text-secondary fs-6 mb-0">
+                        {props.cast?.join(", ") || "N/A"}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

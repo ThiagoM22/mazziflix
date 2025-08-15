@@ -24,11 +24,19 @@ const NavBar = ({ home, series, filmes }) => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark ">
+      <nav className="navbar navbar-expand-lg navbar-dark">
         <div className="container-fluid">
-          <a className="navbar-brand ms-5 mt-2 mb-2" href="/Home">
-            <img className="logo1" src={logo} alt="Logo" />
+          {/* Logo */}
+          <a className="navbar-brand ms-2 ms-md-5 mt-2 mb-2" href="/Home">
+            <img
+              className="logo1"
+              src={logo}
+              alt="Logo"
+              style={{ maxHeight: "40px" }}
+            />
           </a>
+
+          {/* Botão toggle para mobile */}
           <button
             className="navbar-toggler"
             type="button"
@@ -40,8 +48,11 @@ const NavBar = ({ home, series, filmes }) => {
           >
             <span className="navbar-toggler-icon"></span>
           </button>
+
+          {/* Conteúdo colapsável */}
           <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav me-auto ms-5 fs-5">
+            {/* Links de navegação */}
+            <ul className="navbar-nav me-auto ms-0 ms-lg-5 fs-5">
               <li className="nav-item">
                 <a className={`nav-link ${home}`} href="/Home">
                   Home
@@ -58,31 +69,40 @@ const NavBar = ({ home, series, filmes }) => {
                 </a>
               </li>
             </ul>
-            <form
-              className="d-flex align-items-center me-5 gap-5"
-              onSubmit={handleSearch} // Adiciona o evento de submit
-            >
-              <input
-                className="bg-dark pesquisa text-white border-0 form-control rounded-3 text-decoration-none"
-                type="search"
-                placeholder="Pesquisar..."
-                aria-label="Search"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)} // Atualiza o estado com o valor digitado
-              />
-              <div className="d-flex align-items-center gap-2">
+
+            {/* Área de busca e usuário */}
+            <div className="d-flex flex-column flex-lg-row align-items-start align-items-lg-center me-0 me-lg-5 gap-3 gap-lg-5 mt-3 mt-lg-0">
+              {/* Formulário de busca */}
+              <form
+                className="d-flex w-100"
+                onSubmit={handleSearch}
+                style={{ maxWidth: "300px" }}
+              >
+                <input
+                  className="bg-dark pesquisa text-white border-0 form-control rounded-3 text-decoration-none"
+                  type="search"
+                  placeholder="Pesquisar..."
+                  aria-label="Search"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                />
+              </form>
+
+              {/* Área do usuário */}
+              <div className="d-flex align-items-center gap-2 flex-shrink-0">
                 <img
                   className="rounded-3 avatar"
                   src={avatar}
                   alt="User"
+                  style={{ width: "40px", height: "40px" }}
                 />
                 {userName && (
-                  <span className="text-light me-3 fs-5">
+                  <span className="text-light fs-6 fs-lg-5 d-none d-sm-inline">
                     Bem-vindo, {userName}!
                   </span>
                 )}
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </nav>
