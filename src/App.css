@@ -40,7 +40,7 @@ body {
   }
   .Info h1 {
     font-size: 40px !important;
-    width: 10% !important;
+  
   }
   .pesquisa {
     width: 250px !important;
@@ -53,6 +53,16 @@ body {
 }
 .Card:hover {
   transform: scale(1.1);
+}
+
+@media screen and (max-width: 768px) {
+  .Card {
+    width: 250px !important;
+    height: 370px !important;
+  }
+  .scroller {
+  height: 420px !important;
+}
 }
 
 .banner {

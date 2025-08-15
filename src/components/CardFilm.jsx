@@ -61,7 +61,7 @@ const CardFilm = (props) => {
 
   return (
     <>
-      <div onClick={toggleModal}>
+      <div onClick={toggleModal} >
         <div>
           <img
             className="Card"

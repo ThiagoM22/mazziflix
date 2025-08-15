@@ -3,7 +3,7 @@ import CardFilm from "./CardFilm";
 const Carrossel = ({ genero, movies }) => {
   return (
     <>
-      <div className="d-flex flex-column mt-5 ms-5">
+      <div className="d-flex flex-column mt-2 mt-md-5 ms-5">
         <h2>{genero}</h2>
         <div className="d-flex gap-4 overflow-x-scroll scroller overflow-y-hidden mt-2 align-items-center">
           {movies.map((movie) => (
