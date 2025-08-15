@@ -7,7 +7,7 @@ import CardFilm from "../components/CardFilm";
 const Resultado = () => {
   const location = useLocation(); // Hook para acessar a URL atual
   const [searchResults, setSearchResults] = useState([]); // Estado para armazenar os resultados da pesquisa
-  const API_KEY = "ed5a7ff96207a459fa84ad73ea0aab5b"; // Substitua pela sua chave da API do TMDB
+  const API_KEY = import.meta.env.VITE_API_KEY;
   const BASE_URL = "https://api.themoviedb.org/3";
 
   useEffect(() => {

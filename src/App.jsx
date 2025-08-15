@@ -9,7 +9,7 @@ function App() {
   const [movies, setMovies] = useState([]); // Filmes populares
   const [romanceMovies, setRomanceMovies] = useState([]); // Filmes de romance
   const [dramaMovies, setDramaMovies] = useState([]); // Filmes de drama
-  const API_KEY = "ed5a7ff96207a459fa84ad73ea0aab5b"; // Substitua pela sua chave da API do TMDB
+  const API_KEY = import.meta.env.VITE_API_KEY;
   const BASE_URL = "https://api.themoviedb.org/3";
 
   useEffect(() => {
