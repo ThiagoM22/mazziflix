@@ -39,7 +39,7 @@ const Modal = (props) => {
               {/* Gradiente */}
               <div className="gradient-overlay position-absolute w-100 h-100"></div>
               <img
-                className="Image col-12  z-1 border-start-3 border-end-3"
+                className="Image rounded-top-3 col-12  z-1 border-start-3 border-end-3"
                 src={props.backgroundImage}
                 alt={props.title}
               />
