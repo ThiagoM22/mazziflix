@@ -30,7 +30,7 @@ const Login = () => {
   };
   return (
     <>
-      <div className="backdrop Centro">
+      <div className="backdrop d-flex justify-content-center align-items-center">
         <div className="container col-10 col-md-3  d-flex flex-column p-5 LoginBackground">
           <h2 className="fw-bold fs-1">Login</h2>
           <div className="d-flex flex-column align-items-center mt-4">
