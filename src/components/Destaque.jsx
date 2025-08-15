@@ -20,7 +20,7 @@ const Destaque = (props) => {
           <h1 className="display-4 fw-bold">{props.title}</h1>
           <p className="w-75 w-md-50">{props.description}</p>
           <button
-            className="Assistir btn btn-success fs-5 border-0 fw-bold mt-3"
+            className="btnDestaque Assistir btn btn-success fs-5 border-0 fw-bold mt-3"
             onClick={handleWatchClick}
           >
             Assistir

@@ -19,27 +19,21 @@ const Modal = (props) => {
   return (
     <>
       <div
-        className="Centro modalBackdrop"
+        className="w-100 h-100 d-flex justify-content-center align-items-center modalBackdrop"
         onClick={handleBackdropClick} // Adiciona o evento de clique no backdrop
       >
-        <div className="animate-modal">
+        <div className="animate-modal col-12 col-md-6">
           <div
-            className="Modal container-fluid d-flex justify-content-center flex-column align-items-center bg-black movieModal"
+            className="col-12  container-fluid d-flex justify-content-center flex-column align-items-center bg-black movieModal"
             onClick={(e) => e.stopPropagation()} // Impede o clique de fechar o modal
           >
             <div className="d-flex flex-column banner position-relative">
               {/* Gradiente */}
               <div className="gradient-overlay position-absolute w-100 h-100"></div>
               <img
-                className="Image z-1 border-start-3 border-end-3"
+                className="Image col-12  z-1 border-start-3 border-end-3"
                 src={props.backgroundImage}
                 alt={props.title}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  maxHeight: "250px",
-                  objectFit: "cover",
-                }}
               />
               <div className="InfoModal">
                 <div className="text position-absolute z-2 p-2 p-md-3">
@@ -47,7 +41,7 @@ const Modal = (props) => {
                     {props.title}
                   </h1>
                   <button
-                    className="Assistir btn btn-success fs-6 fs-md-5 border-0 fw-bold mt-1 px-3 py-2"
+                    className="btnDestaque Assistir col-md-5 d-none d-sm-block btn btn-success fs-6 fs-md-5 border-0 fw-bold mt-2 px-3 py-2"
                     onClick={handleWatchClick}
                   >
                     ▶ Assistir
@@ -58,9 +52,9 @@ const Modal = (props) => {
             <div className="container-fluid mt-3 mt-md-4 mb-3 mb-md-4">
               <div className="row g-3">
                 {/* Coluna principal - Informações do filme/série */}
-                <div className="col-12 col-lg-8">
+                <div className="col-12 col-lg-8 p-0 p-md-2">
                   <div className="ms-2 ms-md-4">
-                    <div className="Data d-flex flex-wrap gap-2 gap-md-3 justify-content-start fw-bold mb-3">
+                    <div className="Data d-flex flex-wrap gap-2 gap-md-3 justify-content-start fw-bold mb-1 mb-md-3">
                       <span className="badge bg-secondary fs-6">
                         {props.releaseDate}
                       </span>
@@ -74,7 +68,7 @@ const Modal = (props) => {
                       </span>
                     </div>
                     <div>
-                      <p className="text-light lh-base fs-6 pe-2">
+                      <p className="text-light lh-base fs-6 pe-0 pe-md-2 mb-0">
                         {props.overview === ""
                           ? "Sem descrição disponível."
                           : props.overview}
@@ -86,7 +80,7 @@ const Modal = (props) => {
                 {/* Coluna secundária - Gêneros e Elenco */}
                 <div className="col-12 col-lg-4">
                   <div className="me-2 me-md-4 ps-0 ps-lg-5">
-                    <div className="mb-3">
+                    <div className="mb-1 mb-md-3">
                       <p className="mb-1 text-light">
                         <strong className="text-white">Gêneros:</strong>
                       </p>
@@ -103,6 +97,12 @@ const Modal = (props) => {
                       </p>
                     </div>
                   </div>
+                </div>
+
+                <div className="col-12  d-md-none">
+                  <button className="btnDestaque Assistir w-100 btn btn-success fs-6 fs-md-5 border-0 fw-bold mt-2 px-3 py-2">
+                    ▶ Assistir
+                  </button>
                 </div>
               </div>
             </div>

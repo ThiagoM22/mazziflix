@@ -18,8 +18,11 @@ body {
   background-position: "center";
   min-height: 600px;
 }
-.Assistir {
+
+.btnDestaque {
   width: 200px !important;
+}
+.Assistir {
   height: 50px;
   background-color: #db0000 !important;
   margin-left: 0;
@@ -57,18 +60,16 @@ body {
 }
 
 .Image {
-  width: 900px;
-  height: auto;
+  width: 950px !important;
+  height: auto !important;
 }
-
-/* Em desktop (lg e acima), usar tamanho original */
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 768px) {
   .Image {
-    width: 900px !important;
+    width: 100% !important;
     height: auto !important;
-    max-height: none !important;
   }
 }
+/* Em desktop (lg e acima), usar tamanho original */
 .banner {
   position: relative;
 }
@@ -102,18 +103,15 @@ body {
   left: 5%;
   width: 800px !important;
 }
-.Modal {
-  width: 900px !important;
+
+@media screen and (max-width: 768px) {
+  .InfoModal {
+  bottom:20%; /* Ajuste a distância da parte inferior */
+  }
 }
+
 .Modal p {
   font-size: 16px !important;
-}
-.Centro {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 .scroller {
   scrollbar-width: none;
