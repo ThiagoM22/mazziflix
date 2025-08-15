@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import {useEffect, useState } from "react";
 import Carrossel from "../components/Carrossel";
 import Footer from "../components/Footer";
 import NavBar from "../components/NavBar";
