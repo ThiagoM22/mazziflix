@@ -53,7 +53,7 @@ const Series = () => {
     fetchActionSeries();
     fetchComedySeries();
     fetchDramaSeries();
-  }, []);
+  }, [API_KEY]);
 
   return (
     <>
