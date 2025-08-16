@@ -108,7 +108,7 @@ const Modal = (props) => {
                 </div>
 
                 <div className="col-12  d-md-none mb-2 mb-md-0">
-                  <button className="btnDestaque Assistir w-100 btn btn-success fs-6 fs-md-5 border-0 fw-bold mt-2 px-3 py-2">
+                  <button onClick={handleWatchClick} className="btnDestaque Assistir w-100 btn btn-success fs-6 fs-md-5 border-0 fw-bold mt-2 px-3 py-2">
                     ▶ Assistir
                   </button>
                 </div>
