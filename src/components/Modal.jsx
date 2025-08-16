@@ -16,10 +16,16 @@ const Modal = (props) => {
     window.open(searchUrl, "_blank");
   };
 
+  const truncateText = (text, maxLength) => {
+    if (!text) return "";
+    if (text.length <= maxLength) return text;
+    return text.substring(0, maxLength).trim() + "...";
+  };
+
   return (
     <>
       <div
-        className="w-100 h-100 d-flex justify-content-center align-items-center modalBackdrop overflow-y-auto"
+        className="w-100 h-100 d-flex justify-content-center align-items-center modalBackdrop overflow-y-auto overflow-x-hidden"
         onClick={handleBackdropClick} // Adiciona o evento de clique no backdrop
       >
         <div className="animate-modal col-12 col-md-6">
@@ -45,7 +51,7 @@ const Modal = (props) => {
               />
               <div className="InfoModal">
                 <div className="text position-absolute z-2 p-2 p-md-3">
-                  <h1 className="display-6 display-md-5 fw-bold w-100 text-white mb-2">
+                  <h1 className="display-6 display-md-5 fw-bold col-6 col-md-12 text-white mb-2">
                     {props.title}
                   </h1>
                   <button
@@ -76,7 +82,12 @@ const Modal = (props) => {
                       </span>
                     </div>
                     <div>
-                      <p className="text-light lh-base fs-6 pe-0 pe-md-2 mb-0">
+                      <p className="text-light lh-base fs-6 pe-0 pe-md-2 mb-0 d-block d-md-none">
+                        {props.overview === ""
+                          ? "Sem descrição disponível."
+                          : truncateText(props.overview, 400)}
+                      </p>
+                      <p className="text-light lh-base fs-6 pe-0 pe-md-2 mb-0 d-none d-md-block">
                         {props.overview === ""
                           ? "Sem descrição disponível."
                           : props.overview}
@@ -108,7 +119,10 @@ const Modal = (props) => {
                 </div>
 
                 <div className="col-12  d-md-none mb-2 mb-md-0">
-                  <button onClick={handleWatchClick} className="btnDestaque Assistir w-100 btn btn-success fs-6 fs-md-5 border-0 fw-bold mt-2 px-3 py-2">
+                  <button
+                    onClick={handleWatchClick}
+                    className="btnDestaque Assistir w-100 btn btn-success fs-6 fs-md-5 border-0 fw-bold mt-2 px-3 py-2"
+                  >
                     ▶ Assistir
                   </button>
                 </div>

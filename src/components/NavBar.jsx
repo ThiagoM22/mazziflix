@@ -53,6 +53,7 @@ const NavBar = ({ home, series, filmes }) => {
           <div className="collapse navbar-collapse" id="navbarNav">
             {/* Links de navegação */}
             <ul className="navbar-nav me-auto ms-0 ms-lg-5 fs-5">
+              <div className="d-flex gap-3 gap-md-0 justify-content-center ">
               <li className="nav-item">
                 <a className={`nav-link ${home}`} href="/Home">
                   Home
@@ -68,18 +69,19 @@ const NavBar = ({ home, series, filmes }) => {
                   Filmes
                 </a>
               </li>
+
+              </div>
             </ul>
 
             {/* Área de busca e usuário */}
-            <div className="d-flex flex-column flex-lg-row align-items-start align-items-lg-center me-0 me-lg-5 gap-3 gap-lg-5 mt-3 mt-lg-0">
+            <div className="d-flex flex-column flex-lg-row align-items-center align-items-md-start align-items-lg-center me-0 me-lg-5 gap-3 gap-lg-4 mt-3 mt-lg-0">
               {/* Formulário de busca */}
               <form
                 className="d-flex w-100"
                 onSubmit={handleSearch}
-                style={{ maxWidth: "300px" }}
               >
                 <input
-                  className="bg-dark pesquisa text-white border-0 form-control rounded-3 text-decoration-none"
+                  className="bg-dark w-100 pesquisa text-white border-0 form-control rounded-3 text-decoration-none"
                   type="search"
                   placeholder="Pesquisar..."
                   aria-label="Search"
@@ -89,7 +91,7 @@ const NavBar = ({ home, series, filmes }) => {
               </form>
 
               {/* Área do usuário */}
-              <div className="d-flex align-items-center gap-2 flex-shrink-0">
+              <div className="d-flex align-items-center gap-2 flex-shrink-0 mb-2 mb-md-0">
                 <img
                   className="rounded-3 avatar"
                   src={avatar}
@@ -97,7 +99,7 @@ const NavBar = ({ home, series, filmes }) => {
                   style={{ width: "40px", height: "40px" }}
                 />
                 {userName && (
-                  <span className="text-light fs-6 fs-lg-5 d-none d-sm-inline">
+                  <span className="text-light fs-6 fs-lg-5 d-sm-inline">
                     Bem-vindo, {userName}!
                   </span>
                 )}

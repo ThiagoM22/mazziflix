@@ -10,8 +10,14 @@ body {
   color: rgb(255, 255, 255) !important;
 }
 .pesquisa {
-  width: 400px !important;
+
   height: 40px;
+}
+/*Se a tela for grande mudar o tamano do .pesquisa*/
+@media screen and (min-width: 768px) {
+  .pesquisa {
+   width: 300px !important;
+  }
 }
 .Destaque {
   background-size: "cover";
@@ -116,7 +122,7 @@ body {
 
 @media screen and (max-width: 768px) {
   .InfoModal {
-  bottom:20%; /* Ajuste a distância da parte inferior */
+  bottom:50%; /* Ajuste a distância da parte inferior */
   }
 }
 
