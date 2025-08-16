@@ -38,7 +38,7 @@ const Resultado = () => {
       <NavBar home={""} filmes={""} series={""} />
       <div className="container mt-5">
         <h1>Resultados da Pesquisa</h1>
-        <div className="d-flex gap-4 flex-wrap mt-4">
+        <div className="d-flex gap-4 flex-wrap mt-4 justify-content-center align-items-center">
           {searchResults.length > 0 ? (
             searchResults.map((movie) => (
               <CardFilm
