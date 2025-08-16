@@ -37,6 +37,23 @@ const Footer = () => {
               </a>
             </div>
           </div>
+
+          {/* Seção TMDB Attribution */}
+          <div className="row border-top border-secondary pt-3 mt-0 mb-3">
+            <div className="col-12 text-center">
+              <p className="mb-0 text-secondary fs-6">
+                Dados de filmes e séries fornecidos por{" "}
+                <a
+                  href="https://www.themoviedb.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-info text-decoration-none"
+                >
+                  The Movie Database (TMDB)
+                </a>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </>
